@@ -21,16 +21,18 @@ const Header = ({ handleClickOnCartIcon }) => {
     >
       <LogoRow>
         <HomeNavLink exact to="/">
-          {/* <Title>
-                <span>COOLSTUFF</span>
-            </Title> */}
+   
           <Logo src={LogoWow} />
+{/* //tried to incorporate full mobile menu feature, not done yet//           */}
+{/* //set out the structure and designated paths for the menu header items// */}
         </HomeNavLink>
         {location.pathname === "/" ||
         location.pathname === "/confirmation" ||
         location.pathname === "/view-order" ||
         location.pathname === "/account" ||
-        // location.pathname === "/brands" ||
+        location.pathname === "/signin" ||
+        location.pathname === "/register" ||
+
         location.pathname === "/checkout" ||
         location.pathname === "/aboutus" ||
         location.pathname.includes("/products") ? (
@@ -44,22 +46,25 @@ const Header = ({ handleClickOnCartIcon }) => {
       {location.pathname === "/" ||
       location.pathname === "/confirmation" ||
       location.pathname === "/view-order" ||
-      // location.pathname === "/brands" ||
+      location.pathname === "/signin" ||
+      location.pathname === "/register" ||
+
       location.pathname === "/account" ||
       location.pathname === "/checkout" ||
       location.pathname === "/aboutus" ||
       location.pathname.includes("/products") ? (
         <NavMenu>
-          <StyledNavLink exact to="/aboutus">
-            About Us
-          </StyledNavLink>
 
           <StyledNavLink exact to="/">
-            Body
+            Home
           </StyledNavLink>
 
           <StyledNavLink exact to="/products">
             <li>Shop All</li>
+          </StyledNavLink>
+
+          <StyledNavLink exact to="/aboutus">
+            About Us
           </StyledNavLink>
 
           <StyledNavLink exact to="/view-order">

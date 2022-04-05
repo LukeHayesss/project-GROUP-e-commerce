@@ -6,12 +6,14 @@ import { AppContext } from "./AppContext";
 import { theme } from './GlobalStyles';
 import { FaTimes } from "react-icons/fa";
 
+
 const Cart = ({ isCartVisible, handleClickOnCartIcon }) => {
   const { selectedItems, setSelectedItems } = useContext(AppContext);
 
   let valuesInStorage = Object.entries(localStorage)
   .filter((entry) => entry[0] === "product")
   .map((entry) => entry[1]);
+
 
   useEffect(() => {
     if (valuesInStorage.length > 0) {
@@ -23,7 +25,7 @@ const Cart = ({ isCartVisible, handleClickOnCartIcon }) => {
     }
   }, []);
 
-/////////////////////////////
+//subtract items in cart//
   const handleSubtract = (item) => {
     if (item.quantityOfProduct >= 2) {
       const updatedItem = {
@@ -43,7 +45,8 @@ const Cart = ({ isCartVisible, handleClickOnCartIcon }) => {
       setSelectedItems(itemsTally);
     }
   };
-///////////////////
+
+//increase items in cart//
 const handleAdd = (item) => {
   if (item.quantityOfProduct < item.product.numInStock) {
     const updatedItem = {
@@ -63,7 +66,7 @@ const handleAdd = (item) => {
     }
   };
 
-  //remove from the cart//
+  //remove items completely from the cart/array of items using a delete icon//
   const handleClickRemove = (item) => {
     localStorage.removeItem(item.product._id);
 
@@ -75,6 +78,8 @@ const handleAdd = (item) => {
     setSelectedItems(updatedArray)
   };
 
+//map through the selected items in the cart, and make the count be an accurate total of items. 
+//use tofixed to round the decimal number to 2 numbers after the decimal (20.99)
   let count = 0;
   selectedItems.map((item) => {
     let price = item.product.price;
@@ -84,6 +89,7 @@ const handleAdd = (item) => {
       Number(item.quantityOfProduct) * Number(removeDollarSign).toFixed(2));
   });
 
+  //build the structure of the page//
   return (
     <CartBody isCartVisible={isCartVisible}>
       <CartTitle>Your Cart</CartTitle>
@@ -125,6 +131,7 @@ const handleAdd = (item) => {
   );
 };
 
+//running the styled components//
 const ItemContainer = styled.div`
 padding-bottom: 30px;
 position: absolute;

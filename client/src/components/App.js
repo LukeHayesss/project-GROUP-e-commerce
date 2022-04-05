@@ -65,6 +65,8 @@ const App = () => {
         handleClickOnCartIcon={handleClickOnCartIcon}
       />
 
+{/* //setting out the structure// */}
+
       <main>
         <Switch>
           <Route exact path="/">

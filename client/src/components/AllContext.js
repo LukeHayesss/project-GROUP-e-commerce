@@ -1,9 +1,10 @@
 import React, { createContext, useState, useEffect } from "react";
 //import { v4 as uuidv4 } from "uuid";
-import moment from "moment";
 
 export const AllContext = createContext();
 
+
+//setting the context for the website//
 let initialState = {
 
     firstName: "",

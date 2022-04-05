@@ -100,7 +100,7 @@ const PaginationContainer = styled.footer`
         display: flex;
         justify-self: center;
     }
-    .pagiantion ul {
+    .pagination ul {
     }
     .pagination a {
         text-decoration: none;
@@ -122,7 +122,7 @@ const PaginationContainer = styled.footer`
         border-radius: 5px;
     }
     .pagination li:hover:not(.active) {
-        background-color: grey;
+        background-color: #808080;
         border-radius: 5px;
     }
 `;

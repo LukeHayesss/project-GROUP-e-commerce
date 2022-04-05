@@ -121,7 +121,7 @@ const Category = styled.div`
     padding: 5px;
   }
   h2 {
-    color: red;
+    color: black;
   }
 `;
 

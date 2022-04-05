@@ -10,6 +10,11 @@ const Confirmation = () => {
 
         const history = useHistory();
 
+
+//count of items starts at zero, map through items, price, 
+//and combine number of items, quantity, and price numbers 
+//only, add two decimal places after zero using tofixed.
+//remove dollar sign from a given place
         let count = 0;
         purchased.map((item) => {
             let price = item.product.price;
@@ -36,9 +41,6 @@ const Confirmation = () => {
                         <p>
                             <MoarDeets>Order Number: </MoarDeets>
                             <span>{formValue.orderNum}</span></p>
-                            <p>
-                                {" "}
-                                <MoarDeets>Date: </MoarDeets> <span>{formValue.date}</span></p>
                                 <p>
                                     <strong>Name</strong>: {formValue.firstName} {formValue.lastName}
                                 </p>

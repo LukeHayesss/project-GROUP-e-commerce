@@ -86,8 +86,8 @@ const ButtonLink = styled(Link)`
 position: relative;
     display: block;
     width: 100%;
-    border-radius: 12px;
-    background: blue;
+    border-radius: 4px;
+    background: #0046be;
     color: white;
     border: none;
     padding: 8px;
@@ -99,7 +99,7 @@ position: relative;
         opacity: 0.5;
     }
     :hover {
-        color: red;
+        background-color: #001e73;
     }
 `;
 
@@ -143,11 +143,12 @@ const Stock = styled.p`
     margin: 0;
 `;
 
+//sold out button
 const Add = styled.button`
     position: relative;
     display: block;
     width: 100%;
-    border-radius: 12px;
+    border-radius: 4px;
     background: black;
     color: white;
     border: none;
@@ -160,7 +161,8 @@ const Add = styled.button`
         opacity: 0.5;
     }
     :hover {
-        color: red;
+        background-color: #808080;
+        opacity: 0.7;
     }
 `;
 

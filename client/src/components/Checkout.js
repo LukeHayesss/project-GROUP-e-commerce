@@ -4,6 +4,9 @@ import styled from "styled-components";
 import { AppContext } from "./AppContext";
 import { FaLock } from "react-icons/fa";
 
+//using context, set the initial state for the//
+//functions running through the checkout//
+
 const Checkout = () => {
   const [errMessage, setErrMessage] = useState("");
   const [status, setStatus] = useState("idle");
@@ -18,6 +21,8 @@ const Checkout = () => {
   } = useContext(AppContext);
   const history = useHistory();
 
+  //make an array that consists of the items 
+  //in the order, track by product id and quantity of stock
   let itemsPurchased = [];
   selectedItems.forEach((item) => {
     itemsPurchased.push({
@@ -26,23 +31,28 @@ const Checkout = () => {
     });
   });
 
+//return an array of the info contained within formvalue, 
+//and return whether is disabled or not, depending on 
+//if correct info is present//
   useEffect(() => {
     Object.values(formValue).includes("")
       ? setDisabled(true)
       : setDisabled(false);
   }, [formValue, setDisabled]);
 
+  //spread the formvalue info details//
   const handleFormChange = (value, name) => {
     setFormValue({ ...formValue, [name]: value, itemsPurchased });
     setErrMessage("");
   };
 
+  //add a handler/event to the pay now button that will 
+  //use history.push to track/update/redirect to confirmation
   const addOrderHandler = (ev) => {
     ev.preventDefault();
     setStatus("pending");
 
-    console.log("FORMVALUE", formValue);
-
+//use the fetching api to create a new order//
     fetch("/api/add-order", {
       method: "post",
       headers: {
@@ -54,16 +64,16 @@ const Checkout = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log("Success:", data);
         const { status, error } = data;
         const { _id } = data.data;
-        console.log("_id", _id);
-        console.log("status", status);
 
+//if status successful, track and update the info that is 
+//associated with the order, clear the localstorage, and 
+//push to the confirmation page, which will contain 
+//orderid and all the relevant info
         if (status === 200) {
           setStatus("confirmed");
           setPurchased(selectedItems);
-          // updateInventory();
           setSelectedItems([]);
           setFormValue({ ...formValue, orderNum: _id });
           localStorage.clear();
@@ -71,6 +81,7 @@ const Checkout = () => {
           history.push("/confirmation");
         } else if (error) {
           setStatus("error");
+          setErrMessage(errMessage[error])
         }
       })
       .catch((error) => {
@@ -78,7 +89,9 @@ const Checkout = () => {
       });
   };
 
-  /////////////////////////////////////////////
+//count of items starts at zero, map through items, price, 
+//and combine number of items, quantity, and price numbers 
+//only, add two decimal places after zero using tofixed
   let count = 0;
   selectedItems.map((item) => {
     let price = item.product.price;
@@ -88,6 +101,7 @@ const Checkout = () => {
       Number(item.quantityOfProduct) * Number(removeDollarSign)).toFixed(2);
   });
 
+//set out the structure and proper info for the page//
   return (
     <AllWrapper>
       <PaymentContainer>
@@ -235,7 +249,6 @@ const Checkout = () => {
               </OuterSpan>
             </InputDiv>
           </InputRow>
-          {errMessage && <p style={{ color: "red" }}>{errMessage}</p>}
 
           <BtnWrapper onClick={addOrderHandler}>
             <Btn className="accentBtn">Continue to Payment</Btn>

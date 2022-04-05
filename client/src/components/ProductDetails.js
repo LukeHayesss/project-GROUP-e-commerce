@@ -1,6 +1,6 @@
 
 
-  import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import { AppContext } from "./AppContext";
@@ -11,8 +11,6 @@ const ProductDetails = ({ handleClickOnCartIcon }) => {
     
   const { selectedItems, setSelectedItems } = useContext(AppContext);
 
-//   const {selectedItems, setSelectedItems} = useContext(AppContext) || {}
-
   const [currentItem, setCurrentItem] = useState([]);
   const [itemInCart, setItemInCart] = useState(initialState);
   const [quantityInCart, setQuantityInCart] = useState(0);
@@ -21,6 +19,7 @@ const ProductDetails = ({ handleClickOnCartIcon }) => {
 
   let { _id } = useParams();
 
+  //get each item by its id//
   useEffect(() => {
     fetch(`/api/get-item/${_id}`)
       .then((rest) => rest.json())
@@ -29,7 +28,7 @@ const ProductDetails = ({ handleClickOnCartIcon }) => {
       });
   }, []);
 
-
+//track the increase or decrease in quantity via numinstock//
   const substractQtyHandler = () => {
     if (selectedQuantity === 1) {
       return;
@@ -46,6 +45,7 @@ const ProductDetails = ({ handleClickOnCartIcon }) => {
     setSelectedQuantity(selectedQuantity + 1);
   };
 
+  
   const addToCart = () => {
     setSelectedItems((value) => {
       return [

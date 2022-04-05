@@ -1,11 +1,11 @@
 import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import Styled, { keyframes } from "styled-components";
-// import { theme } from "./GlobalStyles";
 import { AppContext } from "./AppContext";
 
 let initialState = { product: "", quantityOfProduct: "" };
 
+//product consists of the following values//
 const ProductCard = ({ product, handleClickOnCartIcon }) => {
   const {
     name,
@@ -21,6 +21,9 @@ const ProductCard = ({ product, handleClickOnCartIcon }) => {
   const { selectedItems, setSelectedItems } = useContext(AppContext);
   const [itemInCart, setItemInCart] = useState(initialState);
   const [quantityInCart, setQuantityInCart] = useState(0);
+
+
+//add or remove items in cart and track/account for the associated info. 
 
   const addToCart = () => {
     setSelectedItems((value) => {
@@ -72,15 +75,6 @@ const ProductCard = ({ product, handleClickOnCartIcon }) => {
 };
 
 export default ProductCard;
-
-const scaleIn = keyframes`
-  from {
-    transform: scale(0.8)
-  }
-  to {
-    transform: scale(1);
-  }
-`;
 
 const Div = Styled.div`
 max-width: 400px;

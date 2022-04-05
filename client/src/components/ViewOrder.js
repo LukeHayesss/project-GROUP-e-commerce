@@ -9,8 +9,7 @@ const ViewOrder = () => {
   const [error, setError] = useState(false);
   const { formValue, setFormValue, userOrder, setUserOrder } =
     useContext(AppContext);
-  //const { orderNum,firstName, lastName, email, address } = userOrder[0];
-  //console.log("orderId", orderId);
+
 
   return (
     <>

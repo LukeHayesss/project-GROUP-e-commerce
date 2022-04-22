@@ -6,7 +6,11 @@ This was a group project with three other students during the Concordia Web Deve
 - as we track inventory, user can only add as much of each product to their cart as we currently have in stock
 - the cart is a hover modal that pops out. User can remove/increase/decrease the number of items in the cart
 
-Made with <a href "www.ham.com">Tom</href>
+## The Team
+[Luke Hayes](https://github.com/LukeHayesss)
+[Jordan Dere](https://github.com/J-Dere)
+[Marwa Ayash](https://github.com/MarwaAyash)
+[Aykut Anlsby](https://github.com/AykutAnlsby)
 
 # Screenshots
 
@@ -24,7 +28,7 @@ Made with <a href "www.ham.com">Tom</href>
 
 # The Full Store Page
 
-![group project all store](https://user-images.githubusercontent.com/91355631/164771812-5c596299-37b5-4425-9c85-a84e53918b14.png)
+![group project all store (1)](https://user-images.githubusercontent.com/91355631/164772944-eccfa6f0-422c-4ce6-bf13-cc0c4bdb01ef.png)
 
 # Order Confirmed
 ![group project confirmed](https://user-images.githubusercontent.com/91355631/164771818-e2461aa6-4b2c-49fc-96fe-3340eb823c8c.png)

@@ -1,3 +1,39 @@
+# Group E-Commerce Project
+This was a group project with three other students during the Concordia Web Development Bootcamp. We had to build a fully-functioning E-Commerce site, including the following features-
+- built with React.Js, with the server side handled by Node.js. Styling handled by styled-components
+- add products to cart and checkout; receive confirmation after checkout, and check your order number on the check order page to verify your order details
+- user can filter the shop based on category
+- as we track inventory, user can only add as much of each product to their cart as we currently have in stock
+- the cart is a hover modal that pops out. User can remove/increase/decrease the number of items in the cart
+
+Made with <a href "www.ham.com">Tom</href>
+
+# Screenshots
+
+# Item Detail Page
+
+![group project item detail](https://user-images.githubusercontent.com/91355631/164771875-1bc23a34-0e05-4ea9-a4a1-05b3e8a18c7c.png)
+
+# Cart Page
+
+![group project checkout cart](https://user-images.githubusercontent.com/91355631/164771977-f9685fec-9370-4bd8-9d0f-12e7ee4a52bc.png)
+
+# Checkout Page
+
+![group project checkout](https://user-images.githubusercontent.com/91355631/164772033-cb993abe-64a0-48ff-a707-71f988f66b57.png)
+
+# The Full Store Page
+
+![group project all store](https://user-images.githubusercontent.com/91355631/164771812-5c596299-37b5-4425-9c85-a84e53918b14.png)
+
+# Order Confirmed
+![group project confirmed](https://user-images.githubusercontent.com/91355631/164771818-e2461aa6-4b2c-49fc-96fe-3340eb823c8c.png)
+
+# Homepage
+
+![group project home page](https://user-images.githubusercontent.com/91355631/164771819-e89cbbf5-ae56-4772-996c-242642c04618.png)
+
+
 # Wearables E-Commerce Project
 
 You will make use of _everything_ that you have learned thus far in the bootcamp to build an e-commerce app that will showcase all of the provided _wearables_ items.
